@@ -6,16 +6,27 @@ class Worker
     int zarplata;
     string fio;
     int year;
-public:
-    Worker() { }
+    string dolzhnost;
 
-    int Set_a(int a1)//задаем 
+public:
+    int Set_zarplata(int money)
     {
-        zarplata = a1;
+        if (money < 1)
+        {
+            money = 1;
+        }
+        else
+        {
+            zarplata = money;
+        }
     }
-    string fio(string fio1)
+    string Set_fio(string fio1)
     {
         fio = fio1;
+    }
+    string Set_dolznost(string dolzh)
+    {
+        dolzhnost=dolzh;
     }
     int Set_year(int year1)
     {
@@ -24,30 +35,51 @@ public:
         else
             year = year1;
     }
-
-
-    ~Worker() { cout << "Destruct" << a << endl; }
-    int get_a()
-    {
-        return a;
-    }
-    int Stazh()
-    {
-        return 2022 - year;
-    }
-    string Get_fio()
+    int get_fio()
     {
         return fio;
     }
+    int get_stazh()
+    {
+        return 2022 - year;
+    }
+    string Get_dolzhnost()
+    {
+        return dolzhnost;
+    }
+    int get_zarplata()
+    {
+        return zarplata;
+    }
 };
-void x()
+class Shtat
 {
-    cout << "x1";
-}
-void xx()
-{
-    cout << "x1,x2";
-}
+    Worker* shtat;
+public:
+    Shtat(int size)
+    {
+        shtat = new Worker[size];
+        for (int i = 0; i < size; i++)
+        {
+            cout << "Введите год трудоустройства: " << endl;
+            int god;
+            cin >> god;
+            shtat[i].Set_year(god);
+            //реализуем объект класса worker и добавляем в массив shtat
+        }
+    }
+    void Stariki(int stazh,int size)
+    {
+        for (i = 0; i < size; i++)
+        {
+            if (shtat[i].get_stazh > stazh)
+            {
+                shtat[i].get_fio;
+            }
+        }
+    }
+
+};
 
 
 int main()
