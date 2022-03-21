@@ -87,25 +87,7 @@ int main()
     int n;
     cout << "Введите кол-во сотрудников:" << endl;
     cin >> n;
-    Worker* a = new Worker[n];
-    for (int i = 0; i < n; i++)
-    {
-        cout << "Введите год трудоустройства: " << endl;
-        int god;
-        cin >> god;
-        a[i].Set_year(god);
-
-
-    }
-    int s;
-    cout << "Введите стаж: ";
-    cin >> s;
-    for (int i = 0; i < n; i++)
-    {
-        if (a[i].Stazh() > s)
-            cout << a[i].Get_fio();//00xf253
-
-    }
+    
 }
 
 
