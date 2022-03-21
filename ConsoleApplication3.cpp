@@ -85,13 +85,17 @@ public:
     void Stariki(int stazh, int size)
     {
 
-        for (int i = 0; i < size; i++)
+        for (Worker *i = shtat; i <= &shtat[size]; i++)
         {
-            if (this->shtat[i].Get_stazh() > stazh)
+            if (i->Get_stazh() > stazh)
             {
-                this->shtat[i].Get_fio();
+                i->Get_fio();
             }
         }
+    }
+    ~Shtat()
+    {
+        delete[shtat];
     }
     
 };
@@ -104,6 +108,10 @@ int main()
     cout << "Введите кол-во сотрудников:" << endl;
     cin >> n;
     Shtat zavod(n);
+    cout << "Найти сотрудников стаж которых более: ";
+    int s;
+    cin >> s;
+    zavod.Stariki(s, n);
 }
 
 
