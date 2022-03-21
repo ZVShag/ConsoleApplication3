@@ -93,6 +93,28 @@ public:
             }
         }
     }
+    void Dolzhnost(string dol, int size)
+    {
+
+        for (Worker* i = shtat; i <= &shtat[size]; i++)
+        {
+            if (i->Get_Dolzhnost() > dol)
+            {
+                i->Get_fio();
+            }
+        }
+    }
+    void Price(int  pr, int size)
+    {
+
+        for (Worker* i = shtat; i <= &shtat[size]; i++)
+        {
+            if (i->Get_Zarplata() > pr)
+            {
+                i->Get_fio();
+            }
+        }
+    }
     ~Shtat()
     {
         delete[shtat];
